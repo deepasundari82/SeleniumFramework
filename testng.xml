@@ -1,0 +1,17 @@
+
+<suite name="loginSuite">
+  <test  name="LoginTests">
+  <parameter name= "username" value="admin@yourstore.com"/>
+  <parameter name="password" value="admin"/>
+ 
+    <classes>
+      <class name="tests.LoginTest">
+      <methods>
+                    <include name="testValidLogin" />
+                </methods>
+            </class>   
+    </classes>
+  </test> 
+</suite> 
+
+
