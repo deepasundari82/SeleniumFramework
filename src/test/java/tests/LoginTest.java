@@ -103,16 +103,6 @@ public class LoginTest extends BaseTest {
        test.pass("Login Successful");
        Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
        
-       Math.random()
-       
-       int p1=
-       char c1=
-       
-       senthil
-       tenshil
-       tlnshie
-       
-       int p2=
-       char c2=
+      
     }
 }
