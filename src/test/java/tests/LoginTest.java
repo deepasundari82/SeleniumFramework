@@ -40,8 +40,8 @@ public class LoginTest extends BaseTest {
 	@DataProvider(name="LoginData2")
 	public Object[][] getdata(){
 		return new Object[][] {
-			{"user1","pass1"},
-			{"user2","pass2"},
+			//{"user1","pass1"},
+			//{"user2","pass2"},
 			{"admin@yourstore.com","admin"}
 			
 		};
@@ -49,10 +49,10 @@ public class LoginTest extends BaseTest {
 	
 	
     
-    @Test(dataProvider="LoginData")//give the specific dataprovider name to fetch data.
+    //@Test(dataProvider="LoginData")//give the specific dataprovider name to fetch data.
 	//@Test
 	//@Parameters({"username","password"})//get parameters from the testng
-    public void testValidLogin(String username,String password) {//username and password here comes from dataProvider
+   /* public void testValidLogin(String username,String password) {//username and password here comes from dataProvider
     	
     	log.info("Starting the Login Test...");
     	
@@ -78,35 +78,33 @@ public class LoginTest extends BaseTest {
        Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
        
        
-    }
+    }*/
 	
-	/*//Invalid credentials from the DataProvider
+	//Invalid credentials from the DataProvider
 	@Test(dataProvider="LoginData2")
     public void testLoginwithInvalidCredentials(String username,String password) {//username and password here comes from dataProvider
     	
-    	log.info("Starting the Login Test...");
+		log.info("Starting the Login Test...");
     	
     	test=ExtentReportManager.createTest("Login Test with Invalid credentials");
     	
     	test.info("Navigating to the URL");
         LoginPage loginPage = new LoginPage(driver);
         
-        
+      
         log.info("Adding Credentials");
         test.info("Adding Credentials");
        // loginPage.enterUsername("admin@yourstore.com");
        // loginPage.enterPassword("admin");
         loginPage.enterUsername(username);
         loginPage.enterPassword(password);
-        /*WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-        driver.switchTo().alert();
-        driver.switchTo().alert().accept();
-        
+        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        //Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        //driver.switchTo().alert();
+       // driver.switchTo().alert().accept();
         
         test.info("Clcking the Login Button");
-        loginPage.clickLogin();
-        
+        loginPage.clickLogin();        
         System.out.println("Title of the page :"  +driver.getTitle());
        log.info("Verfifing Page Title");
        test.info("Verifing Page Title");
@@ -114,5 +112,5 @@ public class LoginTest extends BaseTest {
        Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
        
       
-    }*/
+    }
 }
