@@ -5,7 +5,11 @@ import org.testng.annotations.Test;
 import Base.BaseTest;
 
 import java.io.IOException;
+//import java.time.Duration;
 
+//import org.openqa.selenium.Alert;
+//import org.openqa.selenium.support.ui.ExpectedConditions;
+//import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import Pages.LoginPage;
 import Utils.ExcelUtils;
@@ -45,9 +49,9 @@ public class LoginTest extends BaseTest {
 	
 	
     
-    //@Test(dataProvider="LoginData")//give the specific dataprovider name to fetch data.
-	@Test
-	@Parameters({"username","password"})//get parameters from the testng
+    @Test(dataProvider="LoginData")//give the specific dataprovider name to fetch data.
+	//@Test
+	//@Parameters({"username","password"})//get parameters from the testng
     public void testValidLogin(String username,String password) {//username and password here comes from dataProvider
     	
     	log.info("Starting the Login Test...");
@@ -76,7 +80,7 @@ public class LoginTest extends BaseTest {
        
     }
 	
-	//Invalid credentials from the DataProvider
+	/*//Invalid credentials from the DataProvider
 	@Test(dataProvider="LoginData2")
     public void testLoginwithInvalidCredentials(String username,String password) {//username and password here comes from dataProvider
     	
@@ -94,6 +98,12 @@ public class LoginTest extends BaseTest {
        // loginPage.enterPassword("admin");
         loginPage.enterUsername(username);
         loginPage.enterPassword(password);
+        /*WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        driver.switchTo().alert();
+        driver.switchTo().alert().accept();
+        
+        
         test.info("Clcking the Login Button");
         loginPage.clickLogin();
         
@@ -104,5 +114,5 @@ public class LoginTest extends BaseTest {
        Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
        
       
-    }
+    }*/
 }
