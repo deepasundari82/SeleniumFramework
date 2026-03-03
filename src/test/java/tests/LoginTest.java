@@ -50,9 +50,9 @@ public class LoginTest extends BaseTest {
 	
     
     //@Test(dataProvider="LoginData")//give the specific dataprovider name to fetch data.
-	//@Test
-	//@Parameters({"username","password"})//get parameters from the testng
-   /* public void testValidLogin(String username,String password) {//username and password here comes from dataProvider
+	@Test
+	@Parameters({"username","password"})//get parameters from the testng
+   public void testValidLogin(String username,String password) {//username and password here comes from dataProvider
     	
     	log.info("Starting the Login Test...");
     	
@@ -78,7 +78,7 @@ public class LoginTest extends BaseTest {
        Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
        
        
-    }*/
+    }
 	
 	//Invalid credentials from the DataProvider
 	@Test(dataProvider="LoginData2")
