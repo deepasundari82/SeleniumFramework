@@ -52,7 +52,7 @@ public class LoginTest extends BaseTest {
     //@Test(dataProvider="LoginData")//give the specific dataprovider name to fetch data.
 	@Test
 	@Parameters({"username","password"})//get parameters from the testng
-   public void testValidLogin(String username,String password) {//username and password here comes from dataProvider
+   public void testValidLogin(String username,String password) throws InterruptedException {//username and password here comes from dataProvider
     	
     	log.info("Starting the Login Test...");
     	
@@ -60,6 +60,8 @@ public class LoginTest extends BaseTest {
     	
     	test.info("Navigating to the URL");
         LoginPage loginPage = new LoginPage(driver);
+        Thread.sleep(10);
+        
         
         
         log.info("Adding Credentials");
@@ -68,6 +70,7 @@ public class LoginTest extends BaseTest {
        // loginPage.enterPassword("admin");
         loginPage.enterUsername(username);
         loginPage.enterPassword(password);
+       
         test.info("Clcking the Login Button");
         loginPage.clickLogin();
         

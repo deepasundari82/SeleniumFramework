@@ -1,5 +1,7 @@
 package Base;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
@@ -51,6 +53,7 @@ public class BaseTest {
 		driver.manage().window().maximize();
 		log.info("Navigating to URL.." );
 		driver.get("https://admin-demo.nopcommerce.com/login");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
 	}
 	
